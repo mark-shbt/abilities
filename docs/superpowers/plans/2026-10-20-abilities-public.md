@@ -44,7 +44,7 @@
 
 - Remove the tests that guard no real harm: `test_install_links_skills`, `test_install_no_settings`, `test_install_ignores_synced`, `test_sync_offline`, and `test_sync_quiet`.
 - `test_sync_pulls_new_skill`: also check that the output parses as JSON with `hookSpecificOutput.reloadSkills == true`.
-- `test_sync_fetch_time_limit`: an `origin` of `ext::sh -c "sleep 30"` (with `protocol.ext.allow always` in the clone) finishes in less than 9 seconds with a `systemMessage`.
+- `test_sync_fetch_time_limit`: an `origin` of `ext::sleep 30` (with `protocol.ext.allow always` in the clone) finishes in less than 9 seconds with a `systemMessage`.
 
 - [ ] **Step 2: Run `bash tests/test.sh` and see the two FAIL lines**
 

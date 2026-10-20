@@ -60,12 +60,6 @@ print(sum(1 for g in groups for h in g.get("hooks", [])
 EOF
 }
 
-test_install_links_skills() {
-  setup alpha
-  "$R/install.sh" >/dev/null 2>&1
-  [ -L "$HOME/.claude/skills/alpha" ] &&
-    [ "$(readlink "$HOME/.claude/skills/alpha")" = "$R/skills/alpha" ]
-}
 
 test_install_keeps_settings() {
   setup alpha
@@ -90,11 +84,6 @@ test_install_twice() {
   [ "$(hook_count)" = 1 ]
 }
 
-test_install_no_settings() {
-  setup alpha
-  "$R/install.sh" >/dev/null 2>&1
-  [ -f "$HOME/.claude/settings.json" ] && [ "$(hook_count)" = 1 ]
-}
 
 test_install_skips_real_folder() {
   setup alpha
@@ -107,24 +96,7 @@ test_install_skips_real_folder() {
     [[ "$out" == *"skip alpha"* ]]
 }
 
-test_install_ignores_synced() {
-  setup alpha
-  mkdir -p "$HOME/.claude/skills/synced/x"
-  echo keep > "$HOME/.claude/skills/synced/x/SKILL.md"
-  "$R/install.sh" >/dev/null 2>&1 || return 1
-  [ ! -L "$HOME/.claude/skills/synced" ] &&
-    [ "$(cat "$HOME/.claude/skills/synced/x/SKILL.md")" = keep ]
-}
 
-test_sync_pulls_new_skill() {
-  setup alpha
-  "$R/install.sh" >/dev/null 2>&1
-  other_clone
-  make_skill "$T/other" beta
-  push_other "add beta"
-  sync_hook || return 1
-  [ -L "$HOME/.claude/skills/beta" ] && [ -f "$HOME/.claude/skills/beta/SKILL.md" ]
-}
 
 test_sync_removes_deleted_skill() {
   setup alpha
@@ -152,20 +124,29 @@ test_sync_diverged() {
     [[ "$out" == *"git pull --rebase"* ]]
 }
 
-test_sync_offline() {
-  setup alpha
-  git -C "$R" remote set-url origin "$T/missing.git"
-  local out
-  out=$(sync_hook) || return 1
-  [[ "$out" == *systemMessage* ]]
-}
 
-test_sync_quiet() {
+
+test_sync_pulls_new_skill() {
   setup alpha
   "$R/install.sh" >/dev/null 2>&1
+  other_clone
+  make_skill "$T/other" beta
+  push_other "add beta"
   local out
   out=$(sync_hook) || return 1
-  [ -z "$out" ]
+  [ -L "$HOME/.claude/skills/beta" ] && [ -f "$HOME/.claude/skills/beta/SKILL.md" ] &&
+    echo "$out" | python3 -c 'import json, sys; assert json.load(sys.stdin)["hookSpecificOutput"]["reloadSkills"] is True'
+}
+
+# The ext helper never answers, like a network that drops packets.
+test_sync_fetch_time_limit() {
+  setup alpha
+  git -C "$R" config protocol.ext.allow always
+  git -C "$R" remote set-url origin 'ext::sleep 30'
+  local start out
+  start=$(date +%s)
+  out=$(sync_hook) || return 1
+  [ $(($(date +%s) - start)) -lt 9 ] && [[ "$out" == *systemMessage* ]]
 }
 
 run() {

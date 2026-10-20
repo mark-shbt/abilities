@@ -22,14 +22,14 @@ for dir in "$SRC"/*/; do
     echo "skip $name: $link is not a symlink"
     continue
   fi
-  ln -s "$target" "$link"
+  ln -s "$target" "$link" && echo "linked $name"
 done
 
 # The other Mac can delete a skill, which leaves a broken link here.
 for link in "$DEST"/*; do
   [ -L "$link" ] || continue
   case "$(readlink "$link")" in
-    "$SRC"/*) [ -e "$link" ] || rm "$link" ;;
+    "$SRC"/*) [ -e "$link" ] || { rm "$link" && echo "removed $(basename "$link")"; } ;;
   esac
 done
 
