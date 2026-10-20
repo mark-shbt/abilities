@@ -1,6 +1,5 @@
 #!/bin/bash
-# Links each skill folder in this repo into ~/.claude/skills.
-# Prints one line for each skipped skill. It always exits 0.
+# Links each repo skill into ~/.claude/skills. It always exits 0.
 
 set -u
 

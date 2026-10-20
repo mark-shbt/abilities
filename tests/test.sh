@@ -1,5 +1,4 @@
 #!/bin/bash
-# Tests for install.sh, bin/link.sh, and bin/sync.sh.
 # Each test uses a temporary HOME and a local bare repo as origin.
 
 set -u
@@ -115,6 +114,58 @@ test_install_ignores_synced() {
   "$R/install.sh" >/dev/null 2>&1 || return 1
   [ ! -L "$HOME/.claude/skills/synced" ] &&
     [ "$(cat "$HOME/.claude/skills/synced/x/SKILL.md")" = keep ]
+}
+
+test_sync_pulls_new_skill() {
+  setup alpha
+  "$R/install.sh" >/dev/null 2>&1
+  other_clone
+  make_skill "$T/other" beta
+  push_other "add beta"
+  sync_hook || return 1
+  [ -L "$HOME/.claude/skills/beta" ] && [ -f "$HOME/.claude/skills/beta/SKILL.md" ]
+}
+
+test_sync_removes_deleted_skill() {
+  setup alpha
+  "$R/install.sh" >/dev/null 2>&1
+  other_clone
+  git -C "$T/other" rm -rq skills/alpha
+  push_other "remove alpha"
+  sync_hook || return 1
+  [ ! -L "$HOME/.claude/skills/alpha" ] && [ ! -e "$HOME/.claude/skills/alpha" ]
+}
+
+test_sync_diverged() {
+  setup alpha
+  other_clone
+  make_skill "$T/other" beta
+  push_other "add beta"
+  make_skill "$R" gamma
+  git -C "$R" add -A
+  git -C "$R" commit -qm "add gamma"
+  local before out
+  before=$(git -C "$R" rev-parse HEAD)
+  out=$(sync_hook) || return 1
+  [ "$(git -C "$R" rev-parse HEAD)" = "$before" ] &&
+    [[ "$out" == *systemMessage* ]] &&
+    [[ "$out" == *"git pull --rebase"* ]]
+}
+
+test_sync_offline() {
+  setup alpha
+  git -C "$R" remote set-url origin "$T/missing.git"
+  local out
+  out=$(sync_hook) || return 1
+  [[ "$out" == *systemMessage* ]]
+}
+
+test_sync_quiet() {
+  setup alpha
+  "$R/install.sh" >/dev/null 2>&1
+  local out
+  out=$(sync_hook) || return 1
+  [ -z "$out" ]
 }
 
 run() {
