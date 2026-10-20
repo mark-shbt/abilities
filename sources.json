@@ -1,0 +1,50 @@
+[
+  {
+    "name": "grill-me",
+    "repo": "mattpocock/skills",
+    "path": "skills/productivity/grill-me",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "grilling",
+    "repo": "mattpocock/skills",
+    "path": "skills/productivity/grilling",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "prototype",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/prototype",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "teach",
+    "repo": "mattpocock/skills",
+    "path": "skills/productivity/teach",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "unslop",
+    "repo": "cursor/plugins",
+    "path": "pstack/skills/unslop",
+    "ref": "main",
+    "commit": "88d47514b82e7c44f00f2b2a72ff6dd12158038c",
+    "license": "licenses/cursor-plugins.txt"
+  },
+  {
+    "name": "wayfinder",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/wayfinder",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  }
+]
