@@ -162,6 +162,47 @@ test_sync_fetch_time_limit() {
   [ $(($(date +%s) - start)) -lt 9 ] && [[ "$out" == *systemMessage* ]]
 }
 
+# A local repo stands in for github.com/acme/tools.
+make_upstream() {
+  local up="$T/gh/acme/tools.git"
+  mkdir -p "$up/pack/skills/shiny/agents" "$up/pack/skills/other"
+  echo "MIT test" > "$up/pack/LICENSE"
+  printf -- '---\nname: shiny\ndescription: Test.\n---\n' > "$up/pack/skills/shiny/SKILL.md"
+  echo extra > "$up/pack/skills/shiny/EXTRA.md"
+  echo agent > "$up/pack/skills/shiny/agents/a.md"
+  echo other > "$up/pack/skills/other/SKILL.md"
+  git -C "$up" init -q -b main
+  git -C "$up" add -A
+  git -C "$up" commit -qm upstream
+  export ABILITIES_GIT_BASE="file://$T/gh"
+  URL=https://github.com/acme/tools/tree/main/pack/skills/shiny
+}
+
+test_add_skill_copies_skill() {
+  setup
+  make_upstream
+  "$R/bin/add-skill.sh" "$URL" >/dev/null 2>&1 || return 1
+  [ -f "$R/skills/shiny/SKILL.md" ] && [ -f "$R/skills/shiny/EXTRA.md" ] &&
+    [ -f "$R/skills/shiny/agents/a.md" ] && [ ! -e "$R/skills/other" ] &&
+    [ -L "$HOME/.claude/skills/shiny" ] &&
+    [ "$(cat "$R/licenses/acme-tools.txt")" = "MIT test" ] || return 1
+  python3 - "$R/sources.json" "$(git -C "$T/gh/acme/tools.git" rev-parse HEAD)" <<'EOF2'
+import json, sys
+[entry] = json.load(open(sys.argv[1]))
+assert entry == {"name": "shiny", "repo": "acme/tools", "path": "pack/skills/shiny",
+                 "ref": "main", "commit": sys.argv[2], "license": "licenses/acme-tools.txt"}
+EOF2
+}
+
+test_add_skill_name_in_use() {
+  setup
+  make_upstream
+  "$R/bin/add-skill.sh" "$URL" >/dev/null 2>&1 || return 1
+  echo "my change" >> "$R/skills/shiny/SKILL.md"
+  ! "$R/bin/add-skill.sh" "$URL" >/dev/null 2>&1 &&
+    grep -q "my change" "$R/skills/shiny/SKILL.md"
+}
+
 run() {
   local name=$1
   T=$(mktemp -d)
