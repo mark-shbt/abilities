@@ -170,7 +170,8 @@ make_upstream() {
   printf -- '---\nname: shiny\ndescription: Test.\n---\n' > "$up/pack/skills/shiny/SKILL.md"
   echo extra > "$up/pack/skills/shiny/EXTRA.md"
   echo agent > "$up/pack/skills/shiny/agents/a.md"
-  echo other > "$up/pack/skills/other/SKILL.md"
+  printf -- '---\nname: other\ndescription: Test.\n---\n' > "$up/pack/skills/other/SKILL.md"
+  echo "Apache test" > "$up/pack/skills/other/LICENSE"
   git -C "$up" init -q -b main
   git -C "$up" add -A
   git -C "$up" commit -qm upstream
@@ -201,6 +202,20 @@ test_add_skill_name_in_use() {
   echo "my change" >> "$R/skills/shiny/SKILL.md"
   ! "$R/bin/add-skill.sh" "$URL" >/dev/null 2>&1 &&
     grep -q "my change" "$R/skills/shiny/SKILL.md"
+}
+
+test_add_skill_keeps_each_license() {
+  setup
+  make_upstream
+  "$R/bin/add-skill.sh" "$URL" >/dev/null 2>&1 || return 1
+  "$R/bin/add-skill.sh" "${URL%/shiny}/other" >/dev/null 2>&1 || return 1
+  [ "$(cat "$R/licenses/acme-tools.txt")" = "MIT test" ] || return 1
+  python3 - "$R/sources.json" "$R" <<'EOF2'
+import json, sys
+entries = {e["name"]: e for e in json.load(open(sys.argv[1]))}
+assert entries["shiny"]["license"] == "licenses/acme-tools.txt"
+assert open(sys.argv[2] + "/" + entries["other"]["license"]).read() == "Apache test\n"
+EOF2
 }
 
 run() {

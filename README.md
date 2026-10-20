@@ -41,6 +41,18 @@ To set up without the question, use `install.sh --auto-update` or `install.sh --
 
 If you already have a folder in `~/.claude/skills/` with the same name as a skill here, the script does not change your folder. It skips that skill and shows a warning.
 
+## Remove or move the clone
+
+Before you delete or move the clone, run this command:
+
+```sh
+~/git/abilities/install.sh --manual
+```
+
+This removes the hook from `~/.claude/settings.json`. If you delete the clone first, each new session tries to run a script that does not exist. In that case, remove the `SessionStart` entry for `bin/sync.sh` from `~/.claude/settings.json` by hand.
+
+After a move, run `install.sh` from the new folder. Keep only one clone of this repo on each machine.
+
 ## Update by hand
 
 With auto-update off, run this command when you want the newest skills:

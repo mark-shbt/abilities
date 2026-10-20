@@ -56,6 +56,10 @@ while :; do
   for file in LICENSE LICENSE.md LICENSE.txt; do
     if [ -f "$tmp/src/$dir/$file" ]; then
       license="licenses/$owner-$repo.txt"
+      # Two skills from one repo can have different licenses, so keep both.
+      if [ -f "$REPO/$license" ] && ! cmp -s "$tmp/src/$dir/$file" "$REPO/$license"; then
+        license="licenses/$owner-$repo-$name.txt"
+      fi
       mkdir -p "$REPO/licenses"
       cp "$tmp/src/$dir/$file" "$REPO/$license"
       break 2
