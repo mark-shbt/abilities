@@ -98,6 +98,19 @@ test_install_skips_real_folder() {
 
 
 
+test_install_manual_removes_hook() {
+  setup alpha
+  cat > "$HOME/.claude/settings.json" <<'EOF2'
+{"hooks": {"Stop": [{"hooks": [{"type": "command", "command": "/x/stop.sh"}]}]}}
+EOF2
+  "$R/install.sh" --auto-update >/dev/null 2>&1 || return 1
+  [ "$(hook_count)" = 1 ] || return 1
+  "$R/install.sh" --manual >/dev/null 2>&1 || return 1
+  [ "$(hook_count)" = 0 ] &&
+    grep -q '/x/stop.sh' "$HOME/.claude/settings.json" &&
+    [ -L "$HOME/.claude/skills/alpha" ]
+}
+
 test_sync_removes_deleted_skill() {
   setup alpha
   "$R/install.sh" >/dev/null 2>&1
