@@ -15,52 +15,52 @@ To get each new push, turn on auto-update: open `/plugin`, select Marketplaces, 
 
 ## Skills
 
-A skill's command is `/abilities:<skill>`, for example `/abilities:unslop`. The short form, such as `/unslop`, also works when no other command has that name. "Claude starts it" means that Claude uses the skill by itself when the task matches. "You start it" means that you can type the command.
+A skill's command is `/abilities:<skill>`, for example `/abilities:unslop`. The short form, such as `/unslop`, also works when no other command has that name. You can type the command of any skill. ☑ in "Claude starts it" means that Claude also uses the skill by itself when the task matches. ☐ means that only you can start it.
 
 ### Planning
 
-| Skill | Description | Claude starts it | You start it | Source |
-| --- | --- | :-: | :-: | --- |
-| `/abilities:domain-modeling` | Sharpens the project terms and records them in GLOSSARY.md and decision records. | ☑ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling) |
-| `/abilities:grill-me` | Starts grilling on your plan or design. | ☐ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) |
-| `/abilities:grilling` | Asks you questions in rounds until all design decisions are settled. | ☑ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling) |
-| `/abilities:prototype` | Builds a throwaway prototype to answer one design question. | ☑ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype) |
-| `/abilities:research` | Sends a background agent to read primary sources and write cited notes. | ☑ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/research) |
-| `/abilities:teach` | Teaches you a subject over many sessions, with HTML lessons. | ☐ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach) |
-| `/abilities:wayfinder` | Plans work that is too large for one session as a map of decision tickets. | ☐ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/wayfinder) |
+| Skill | Description | Claude starts it | Source |
+| --- | --- | :-: | --- |
+| `/abilities:domain-modeling` | Sharpens the project terms and records them in GLOSSARY.md and decision records. | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling) |
+| `/abilities:grill-me` | Starts grilling on your plan or design. | ☐ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) |
+| `/abilities:grilling` | Asks you questions in rounds until all design decisions are settled. | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling) |
+| `/abilities:prototype` | Builds a throwaway prototype to answer one design question. | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype) |
+| `/abilities:research` | Sends a background agent to read primary sources and write cited notes. | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/research) |
+| `/abilities:teach` | Teaches you a subject over many sessions, with HTML lessons. | ☐ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach) |
+| `/abilities:wayfinder` | Plans work that is too large for one session as a map of decision tickets. | ☐ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/wayfinder) |
 
 ### Writing
 
-| Skill | Description | Claude starts it | You start it | Source |
-| --- | --- | :-: | :-: | --- |
-| `/abilities:unslop` | Removes AI writing patterns from text. | ☑ | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) |
-| `/abilities:wait-what` | Says the last reply again in plain STE, with more context. | ☐ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/wait-what) |
-| `/abilities:writing-for-agents` | Gives rules for writing skills, CLAUDE.md, and AGENTS.md. | ☑ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents) |
+| Skill | Description | Claude starts it | Source |
+| --- | --- | :-: | --- |
+| `/abilities:unslop` | Removes AI writing patterns from text. | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) |
+| `/abilities:wait-what` | Says the last reply again in plain STE, with more context. | ☐ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/wait-what) |
+| `/abilities:writing-for-agents` | Gives rules for writing skills, CLAUDE.md, and AGENTS.md. | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents) |
 
 ### Debugging
 
-| Skill | Description | Claude starts it | You start it | Source |
-| --- | --- | :-: | :-: | --- |
-| `/abilities:diagnosing-bugs` | Finds the cause of a hard bug with a fast loop that fails on the bug. | ☑ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs) |
+| Skill | Description | Claude starts it | Source |
+| --- | --- | :-: | --- |
+| `/abilities:diagnosing-bugs` | Finds the cause of a hard bug with a fast loop that fails on the bug. | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs) |
 
 ### Principles
 
-| Skill | Description | Claude starts it | You start it | Source |
-| --- | --- | :-: | :-: | --- |
-| `/abilities:principle-attack-the-premise` | After two failed fixes, tests the belief that the fixes share. | ☑ | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-attack-the-premise) |
-| `/abilities:principle-build-the-lever` | Writes a script or tool for the work instead of edits by hand. | ☑ | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-build-the-lever) |
-| `/abilities:principle-fix-root-causes` | Fixes the first wrong step, not the place where the symptom shows. | ☑ | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-fix-root-causes) |
-| `/abilities:principle-laziness-protocol` | Makes the smallest change, with one source of truth. | ☑ | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-laziness-protocol) |
-| `/abilities:principle-redesign-from-first-principles` | Changes the design as if the new need was there from the start. | ☑ | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-redesign-from-first-principles) |
-| `/abilities:principle-subtract-before-you-add` | Removes dead code and extra checks before it adds code. | ☑ | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-subtract-before-you-add) |
-| `/abilities:principle-test-behavior-not-implementation` | Keeps only tests that fail when the behavior breaks. | ☑ | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-test-behavior-not-implementation) |
+| Skill | Description | Claude starts it | Source |
+| --- | --- | :-: | --- |
+| `/abilities:principle-attack-the-premise` | After two failed fixes, tests the belief that the fixes share. | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-attack-the-premise) |
+| `/abilities:principle-build-the-lever` | Writes a script or tool for the work instead of edits by hand. | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-build-the-lever) |
+| `/abilities:principle-fix-root-causes` | Fixes the first wrong step, not the place where the symptom shows. | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-fix-root-causes) |
+| `/abilities:principle-laziness-protocol` | Makes the smallest change, with one source of truth. | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-laziness-protocol) |
+| `/abilities:principle-redesign-from-first-principles` | Changes the design as if the new need was there from the start. | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-redesign-from-first-principles) |
+| `/abilities:principle-subtract-before-you-add` | Removes dead code and extra checks before it adds code. | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-subtract-before-you-add) |
+| `/abilities:principle-test-behavior-not-implementation` | Keeps only tests that fail when the behavior breaks. | ☑ | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-test-behavior-not-implementation) |
 
 ### Sessions
 
-| Skill | Description | Claude starts it | You start it | Source |
-| --- | --- | :-: | :-: | --- |
-| `/abilities:handoff` | Writes a summary of the session for the next session. | ☐ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) |
-| `/abilities:retro` | Lists changes to rules and checks after a session. | ☐ | ☑ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/retro) |
+| Skill | Description | Claude starts it | Source |
+| --- | --- | :-: | --- |
+| `/abilities:handoff` | Writes a summary of the session for the next session. | ☐ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) |
+| `/abilities:retro` | Lists changes to rules and checks after a session. | ☐ | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/retro) |
 
 ## Add a skill (for the repo owner)
 
