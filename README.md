@@ -40,10 +40,6 @@ A skill's command is `/abilities:<skill>`, for example `/abilities:unslop`. The 
 | sessions | `handoff` | `/abilities:handoff` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) |
 | sessions | `retro` | `/abilities:retro` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/retro) |
 
-## Move from the old setup
-
-The old setup used `install.sh` and a session-start hook. After the hook pulls this version, the next session removes the hook and the old links, and shows the install commands above. You can then delete the old clone.
-
 ## Add a skill (for the repo owner)
 
 To copy a skill folder from GitHub, give a category and the folder URL:
