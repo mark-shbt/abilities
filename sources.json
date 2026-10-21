@@ -1,5 +1,13 @@
 [
   {
+    "name": "domain-modeling",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/domain-modeling",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
     "name": "grill-me",
     "repo": "mattpocock/skills",
     "path": "skills/productivity/grill-me",
@@ -19,6 +27,14 @@
     "name": "prototype",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/prototype",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "research",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/research",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
     "license": "licenses/mattpocock-skills.txt"

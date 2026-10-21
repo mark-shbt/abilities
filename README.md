@@ -4,9 +4,11 @@ Skills for [Claude Code](https://claude.com/claude-code). Some skills are my own
 
 | Skill | Use | Source |
 | --- | --- | --- |
+| `domain-modeling` | Claude starts it, or `/domain-modeling` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling) |
 | `grill-me` | `/grill-me` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) |
 | `grilling` | Claude starts it, or `/grilling` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling) |
 | `prototype` | Claude starts it, or `/prototype` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype) |
+| `research` | Claude starts it, or `/research` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/research) |
 | `teach` | `/teach` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach) |
 | `unslop` | Claude starts it, or `/unslop` | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) |
 | `wayfinder` | `/wayfinder` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/wayfinder) |
