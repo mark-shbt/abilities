@@ -1,0 +1,8 @@
+{
+  "name": "abilities-principles",
+  "description": "Engineering principles that Claude applies by itself.",
+  "author": {
+    "name": "Mark Kyaw"
+  },
+  "license": "MIT"
+}

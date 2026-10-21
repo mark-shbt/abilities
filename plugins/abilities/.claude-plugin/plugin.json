@@ -1,0 +1,14 @@
+{
+  "name": "abilities",
+  "description": "Installs every abilities plugin.",
+  "author": {
+    "name": "Mark Kyaw"
+  },
+  "dependencies": [
+    "abilities-planning",
+    "abilities-writing",
+    "abilities-debugging",
+    "abilities-principles",
+    "abilities-sessions"
+  ]
+}

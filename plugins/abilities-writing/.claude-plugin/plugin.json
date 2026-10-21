@@ -1,0 +1,8 @@
+{
+  "name": "abilities-writing",
+  "description": "Remove AI patterns, restate replies plainly, and write for agents.",
+  "author": {
+    "name": "Mark Kyaw"
+  },
+  "license": "MIT"
+}

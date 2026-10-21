@@ -1,0 +1,11 @@
+{
+  "name": "abilities-sessions",
+  "description": "Hand off a session and run a retrospective.",
+  "author": {
+    "name": "Mark Kyaw"
+  },
+  "dependencies": [
+    "abilities-writing"
+  ],
+  "license": "MIT"
+}
