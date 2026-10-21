@@ -26,7 +26,10 @@ A skill's command is `/abilities:<skill>`, for example `/abilities:unslop`. The 
 | `/abilities:grilling` | Asks you questions in rounds until all design decisions are settled. | X | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling) |
 | `/abilities:prototype` | Builds a throwaway prototype to answer one design question. | X | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype) |
 | `/abilities:research` | Sends a background agent to read primary sources and write cited notes. | X | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/research) |
+| `/abilities:setup-matt-pocock-skills` | Sets where a repo keeps its specs and tickets. Run it once in each repo before `to-spec` and `to-tickets`. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/setup-matt-pocock-skills) |
 | `/abilities:teach` | Teaches you a subject over many sessions, with HTML lessons. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach) |
+| `/abilities:to-spec` | Writes a spec from the conversation, for your review before the build. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/to-spec) |
+| `/abilities:to-tickets` | Splits a spec into small tickets and waits for your approval of the list. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/to-tickets) |
 | `/abilities:wayfinder` | Plans work that is too large for one session as a map of decision tickets. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/wayfinder) |
 
 ### Writing

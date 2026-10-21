@@ -135,10 +135,37 @@
     "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
+    "name": "setup-matt-pocock-skills",
+    "category": "planning",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/setup-matt-pocock-skills",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
+  },
+  {
     "name": "teach",
     "category": "planning",
     "repo": "mattpocock/skills",
     "path": "skills/productivity/teach",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "to-spec",
+    "category": "planning",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/to-spec",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "to-tickets",
+    "category": "planning",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/to-tickets",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
     "license": "plugins/abilities/licenses/mattpocock-skills.txt"
