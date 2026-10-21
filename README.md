@@ -4,12 +4,16 @@ Skills for [Claude Code](https://claude.com/claude-code). Some skills are my own
 
 | Skill | Use | Source |
 | --- | --- | --- |
+| `diagnosing-bugs` | Claude starts it, or `/diagnosing-bugs` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs) |
 | `domain-modeling` | Claude starts it, or `/domain-modeling` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling) |
 | `grill-me` | `/grill-me` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me) |
 | `grilling` | Claude starts it, or `/grilling` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling) |
 | `handoff` | `/handoff` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff) |
 | `principle-attack-the-premise` | Claude starts it, or `/principle-attack-the-premise` | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-attack-the-premise) |
+| `principle-build-the-lever` | Claude starts it, or `/principle-build-the-lever` | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-build-the-lever) |
+| `principle-fix-root-causes` | Claude starts it, or `/principle-fix-root-causes` | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-fix-root-causes) |
 | `principle-laziness-protocol` | Claude starts it, or `/principle-laziness-protocol` | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-laziness-protocol) |
+| `principle-redesign-from-first-principles` | Claude starts it, or `/principle-redesign-from-first-principles` | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-redesign-from-first-principles) |
 | `principle-subtract-before-you-add` | Claude starts it, or `/principle-subtract-before-you-add` | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-subtract-before-you-add) |
 | `principle-test-behavior-not-implementation` | Claude starts it, or `/principle-test-behavior-not-implementation` | [cursor/plugins (pstack)](https://github.com/cursor/plugins/tree/main/pstack/skills/principle-test-behavior-not-implementation) |
 | `prototype` | Claude starts it, or `/prototype` | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype) |

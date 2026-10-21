@@ -1,5 +1,13 @@
 [
   {
+    "name": "diagnosing-bugs",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/diagnosing-bugs",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
     "name": "domain-modeling",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/domain-modeling",
@@ -40,9 +48,33 @@
     "license": "licenses/cursor-plugins.txt"
   },
   {
+    "name": "principle-build-the-lever",
+    "repo": "cursor/plugins",
+    "path": "pstack/skills/principle-build-the-lever",
+    "ref": "main",
+    "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
+    "license": "licenses/cursor-plugins.txt"
+  },
+  {
+    "name": "principle-fix-root-causes",
+    "repo": "cursor/plugins",
+    "path": "pstack/skills/principle-fix-root-causes",
+    "ref": "main",
+    "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
+    "license": "licenses/cursor-plugins.txt"
+  },
+  {
     "name": "principle-laziness-protocol",
     "repo": "cursor/plugins",
     "path": "pstack/skills/principle-laziness-protocol",
+    "ref": "main",
+    "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
+    "license": "licenses/cursor-plugins.txt"
+  },
+  {
+    "name": "principle-redesign-from-first-principles",
+    "repo": "cursor/plugins",
+    "path": "pstack/skills/principle-redesign-from-first-principles",
     "ref": "main",
     "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
     "license": "licenses/cursor-plugins.txt"
