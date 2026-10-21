@@ -1,182 +1,182 @@
 [
   {
     "name": "diagnosing-bugs",
-    "plugin": "abilities-debugging",
+    "category": "debugging",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/diagnosing-bugs",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-debugging/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "domain-modeling",
-    "plugin": "abilities-planning",
+    "category": "planning",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/domain-modeling",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-planning/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "grill-me",
-    "plugin": "abilities-planning",
+    "category": "planning",
     "repo": "mattpocock/skills",
     "path": "skills/productivity/grill-me",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-planning/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "grilling",
-    "plugin": "abilities-planning",
+    "category": "planning",
     "repo": "mattpocock/skills",
     "path": "skills/productivity/grilling",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-planning/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "handoff",
-    "plugin": "abilities-sessions",
+    "category": "sessions",
     "repo": "mattpocock/skills",
     "path": "skills/productivity/handoff",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-sessions/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "principle-attack-the-premise",
-    "plugin": "abilities-principles",
+    "category": "principles",
     "repo": "cursor/plugins",
     "path": "pstack/skills/principle-attack-the-premise",
     "ref": "main",
     "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
-    "license": "plugins/abilities-principles/licenses/cursor-plugins.txt"
+    "license": "plugins/abilities/licenses/cursor-plugins.txt"
   },
   {
     "name": "principle-build-the-lever",
-    "plugin": "abilities-principles",
+    "category": "principles",
     "repo": "cursor/plugins",
     "path": "pstack/skills/principle-build-the-lever",
     "ref": "main",
     "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
-    "license": "plugins/abilities-principles/licenses/cursor-plugins.txt"
+    "license": "plugins/abilities/licenses/cursor-plugins.txt"
   },
   {
     "name": "principle-fix-root-causes",
-    "plugin": "abilities-principles",
+    "category": "principles",
     "repo": "cursor/plugins",
     "path": "pstack/skills/principle-fix-root-causes",
     "ref": "main",
     "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
-    "license": "plugins/abilities-principles/licenses/cursor-plugins.txt"
+    "license": "plugins/abilities/licenses/cursor-plugins.txt"
   },
   {
     "name": "principle-laziness-protocol",
-    "plugin": "abilities-principles",
+    "category": "principles",
     "repo": "cursor/plugins",
     "path": "pstack/skills/principle-laziness-protocol",
     "ref": "main",
     "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
-    "license": "plugins/abilities-principles/licenses/cursor-plugins.txt"
+    "license": "plugins/abilities/licenses/cursor-plugins.txt"
   },
   {
     "name": "principle-redesign-from-first-principles",
-    "plugin": "abilities-principles",
+    "category": "principles",
     "repo": "cursor/plugins",
     "path": "pstack/skills/principle-redesign-from-first-principles",
     "ref": "main",
     "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
-    "license": "plugins/abilities-principles/licenses/cursor-plugins.txt"
+    "license": "plugins/abilities/licenses/cursor-plugins.txt"
   },
   {
     "name": "principle-subtract-before-you-add",
-    "plugin": "abilities-principles",
+    "category": "principles",
     "repo": "cursor/plugins",
     "path": "pstack/skills/principle-subtract-before-you-add",
     "ref": "main",
     "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
-    "license": "plugins/abilities-principles/licenses/cursor-plugins.txt"
+    "license": "plugins/abilities/licenses/cursor-plugins.txt"
   },
   {
     "name": "principle-test-behavior-not-implementation",
-    "plugin": "abilities-principles",
+    "category": "principles",
     "repo": "cursor/plugins",
     "path": "pstack/skills/principle-test-behavior-not-implementation",
     "ref": "main",
     "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
-    "license": "plugins/abilities-principles/licenses/cursor-plugins.txt"
+    "license": "plugins/abilities/licenses/cursor-plugins.txt"
   },
   {
     "name": "prototype",
-    "plugin": "abilities-planning",
+    "category": "planning",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/prototype",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-planning/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "research",
-    "plugin": "abilities-planning",
+    "category": "planning",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/research",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-planning/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "retro",
-    "plugin": "abilities-sessions",
+    "category": "sessions",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/retro",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-sessions/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "teach",
-    "plugin": "abilities-planning",
+    "category": "planning",
     "repo": "mattpocock/skills",
     "path": "skills/productivity/teach",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-planning/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "unslop",
-    "plugin": "abilities-writing",
+    "category": "writing",
     "repo": "cursor/plugins",
     "path": "pstack/skills/unslop",
     "ref": "main",
     "commit": "88d47514b82e7c44f00f2b2a72ff6dd12158038c",
-    "license": "plugins/abilities-writing/licenses/cursor-plugins.txt"
+    "license": "plugins/abilities/licenses/cursor-plugins.txt"
   },
   {
     "name": "wait-what",
-    "plugin": "abilities-writing",
+    "category": "writing",
     "repo": "mattpocock/skills",
     "path": "skills/productivity/wait-what",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-writing/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "wayfinder",
-    "plugin": "abilities-planning",
+    "category": "planning",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/wayfinder",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-planning/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   },
   {
     "name": "writing-for-agents",
-    "plugin": "abilities-writing",
+    "category": "writing",
     "repo": "mattpocock/skills",
     "path": "skills/productivity/writing-for-agents",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-    "license": "plugins/abilities-writing/licenses/mattpocock-skills.txt"
+    "license": "plugins/abilities/licenses/mattpocock-skills.txt"
   }
 ]

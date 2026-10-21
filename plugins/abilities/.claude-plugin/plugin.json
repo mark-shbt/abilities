@@ -1,14 +1,8 @@
 {
   "name": "abilities",
-  "description": "Installs every abilities plugin.",
+  "description": "Planning, writing, debugging, engineering principles, and session skills.",
   "author": {
     "name": "Mark Kyaw"
   },
-  "dependencies": [
-    "abilities-planning",
-    "abilities-writing",
-    "abilities-debugging",
-    "abilities-principles",
-    "abilities-sessions"
-  ]
+  "license": "MIT"
 }

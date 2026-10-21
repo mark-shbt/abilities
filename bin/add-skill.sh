@@ -1,6 +1,6 @@
 #!/bin/bash
-# Copies a skill folder from GitHub into a plugin and records its source.
-# Usage: bin/add-skill.sh <plugin> https://github.com/<owner>/<repo>/tree/<ref>/<path> [name]
+# Copies a skill folder from GitHub into the plugin and records its source.
+# Usage: bin/add-skill.sh <category> https://github.com/<owner>/<repo>/tree/<ref>/<path> [name]
 
 set -eu
 
@@ -9,19 +9,16 @@ REPO=$(cd "$(dirname "$0")/.." && pwd)
 BASE=${ABILITIES_GIT_BASE:-https://github.com}
 
 usage() {
-  echo "Usage: bin/add-skill.sh <plugin> https://github.com/<owner>/<repo>/tree/<ref>/<path> [name]" >&2
+  echo "Usage: bin/add-skill.sh <category> https://github.com/<owner>/<repo>/tree/<ref>/<path> [name]" >&2
   exit 2
 }
 
-plugin=${1:-}
+# The category only groups skills in the README.
+category=${1:-}
 url=${2:-}
 url=${url%/}
-[ -n "$plugin" ] || usage
-PLUGIN_DIR="$REPO/plugins/$plugin"
-if [ ! -f "$PLUGIN_DIR/.claude-plugin/plugin.json" ]; then
-  echo "No plugin named $plugin in $REPO/plugins" >&2
-  exit 1
-fi
+[ -n "$category" ] || usage
+PLUGIN_DIR="$REPO/plugins/abilities"
 case "$url" in
   https://github.com/*/*/tree/*/*) ;;
   *) usage ;;
@@ -39,12 +36,10 @@ name=${3:-$(basename "$path")}
 dest="$PLUGIN_DIR/skills/$name"
 
 # An existing copy can have your own changes, so never replace it.
-for used in "$REPO"/plugins/*/skills/"$name"; do
-  if [ -e "$used" ]; then
-    echo "The name $name is already in use: $used" >&2
-    exit 1
-  fi
-done
+if [ -e "$dest" ]; then
+  echo "The name $name is already in use: $dest" >&2
+  exit 1
+fi
 
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -59,16 +54,16 @@ fi
 commit=$(git -C "$tmp/src" rev-parse HEAD)
 
 # Cone mode also checks out the files of each parent folder.
-# Each plugin holds its own license copies, because installs copy only the plugin.
+# The plugin holds the license copies, because installs copy only the plugin.
 license=""
 dir=$path
 while :; do
   for file in LICENSE LICENSE.md LICENSE.txt; do
     if [ -f "$tmp/src/$dir/$file" ]; then
-      license="plugins/$plugin/licenses/$owner-$repo.txt"
+      license="plugins/abilities/licenses/$owner-$repo.txt"
       # Two skills from one repo can have different licenses, so keep both.
       if [ -f "$REPO/$license" ] && ! cmp -s "$tmp/src/$dir/$file" "$REPO/$license"; then
-        license="plugins/$plugin/licenses/$owner-$repo-$name.txt"
+        license="plugins/abilities/licenses/$owner-$repo-$name.txt"
       fi
       mkdir -p "$PLUGIN_DIR/licenses"
       cp "$tmp/src/$dir/$file" "$REPO/$license"
@@ -82,15 +77,15 @@ done
 mkdir -p "$PLUGIN_DIR/skills"
 cp -R "$tmp/src/$path" "$dest"
 
-python3 - "$REPO/sources.json" "$name" "$plugin" "$owner/$repo" "$path" "$ref" "$commit" "$license" <<'EOF'
+python3 - "$REPO/sources.json" "$name" "$category" "$owner/$repo" "$path" "$ref" "$commit" "$license" <<'EOF'
 import json, os, sys
 
-path, name, plugin, repo, src_path, ref, commit, license = sys.argv[1:]
+path, name, category, repo, src_path, ref, commit, license = sys.argv[1:]
 entries = []
 if os.path.exists(path):
     with open(path) as f:
         entries = json.load(f)
-entries.append({"name": name, "plugin": plugin, "repo": repo, "path": src_path, "ref": ref,
+entries.append({"name": name, "category": category, "repo": repo, "path": src_path, "ref": ref,
                 "commit": commit, "license": license or None})
 entries.sort(key=lambda e: e["name"])
 with open(path, "w") as f:
@@ -98,10 +93,10 @@ with open(path, "w") as f:
     f.write("\n")
 EOF
 
-echo "Added $name to $plugin from $owner/$repo at ${commit:0:7}."
+echo "Added $name ($category) from $owner/$repo at ${commit:0:7}."
 if [ -z "$license" ]; then
   echo "Warning: no license file found. Check the license before you push."
 elif ! head -n 1 "$REPO/$license" | grep -q '^MIT License'; then
-  echo "Warning: the license is not MIT. Update the license field in plugins/$plugin/.claude-plugin/plugin.json."
+  echo "Warning: the license is not MIT. Update the license field in plugins/abilities/.claude-plugin/plugin.json."
 fi
-echo "Commit and push plugins/$plugin and sources.json."
+echo "Add $name to the README table, then commit and push."

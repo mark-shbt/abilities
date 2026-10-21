@@ -1,5 +1,5 @@
 #!/bin/bash
-# Each test uses a temporary HOME and a copy of bin/ with one test plugin.
+# Each test uses a temporary HOME and a copy of bin/ with the plugin.
 
 set -u
 
@@ -10,14 +10,14 @@ FAILED=0
 export GIT_AUTHOR_NAME=test GIT_AUTHOR_EMAIL=test@example.com
 export GIT_COMMITTER_NAME=test GIT_COMMITTER_EMAIL=test@example.com
 
-# Fills T with HOME and a repo copy at R that has the plugin "kit".
+# Fills T with HOME and a repo copy at R that has the plugin.
 setup() {
   export HOME="$T/home"
   mkdir -p "$HOME/.claude/skills"
   R="$T/abilities"
-  mkdir -p "$R/plugins/kit/.claude-plugin"
+  mkdir -p "$R/plugins/abilities/.claude-plugin"
   cp -R "$SRC/bin" "$R/"
-  echo '{"name": "kit"}' > "$R/plugins/kit/.claude-plugin/plugin.json"
+  echo '{"name": "abilities"}' > "$R/plugins/abilities/.claude-plugin/plugin.json"
 }
 
 # A local repo stands in for github.com/acme/tools.
@@ -41,16 +41,16 @@ test_add_skill_copies_skill() {
   setup
   make_upstream
   "$R/bin/add-skill.sh" kit "$URL" >/dev/null 2>&1 || return 1
-  local k="$R/plugins/kit"
+  local k="$R/plugins/abilities"
   [ -f "$k/skills/shiny/SKILL.md" ] && [ -f "$k/skills/shiny/EXTRA.md" ] &&
     [ -f "$k/skills/shiny/agents/a.md" ] && [ ! -e "$k/skills/other" ] &&
     [ "$(cat "$k/licenses/acme-tools.txt")" = "MIT test" ] || return 1
   python3 - "$R/sources.json" "$(git -C "$T/gh/acme/tools.git" rev-parse HEAD)" <<'EOF'
 import json, sys
 [entry] = json.load(open(sys.argv[1]))
-assert entry == {"name": "shiny", "plugin": "kit", "repo": "acme/tools",
+assert entry == {"name": "shiny", "category": "kit", "repo": "acme/tools",
                  "path": "pack/skills/shiny", "ref": "main", "commit": sys.argv[2],
-                 "license": "plugins/kit/licenses/acme-tools.txt"}
+                 "license": "plugins/abilities/licenses/acme-tools.txt"}
 EOF
 }
 
@@ -58,9 +58,9 @@ test_add_skill_name_in_use() {
   setup
   make_upstream
   "$R/bin/add-skill.sh" kit "$URL" >/dev/null 2>&1 || return 1
-  echo "my change" >> "$R/plugins/kit/skills/shiny/SKILL.md"
+  echo "my change" >> "$R/plugins/abilities/skills/shiny/SKILL.md"
   ! "$R/bin/add-skill.sh" kit "$URL" >/dev/null 2>&1 &&
-    grep -q "my change" "$R/plugins/kit/skills/shiny/SKILL.md"
+    grep -q "my change" "$R/plugins/abilities/skills/shiny/SKILL.md"
 }
 
 test_add_skill_keeps_each_license() {
@@ -68,11 +68,11 @@ test_add_skill_keeps_each_license() {
   make_upstream
   "$R/bin/add-skill.sh" kit "$URL" >/dev/null 2>&1 || return 1
   "$R/bin/add-skill.sh" kit "${URL%/shiny}/other" >/dev/null 2>&1 || return 1
-  [ "$(cat "$R/plugins/kit/licenses/acme-tools.txt")" = "MIT test" ] || return 1
+  [ "$(cat "$R/plugins/abilities/licenses/acme-tools.txt")" = "MIT test" ] || return 1
   python3 - "$R/sources.json" "$R" <<'EOF'
 import json, sys
 entries = {e["name"]: e for e in json.load(open(sys.argv[1]))}
-assert entries["shiny"]["license"] == "plugins/kit/licenses/acme-tools.txt"
+assert entries["shiny"]["license"] == "plugins/abilities/licenses/acme-tools.txt"
 assert open(sys.argv[2] + "/" + entries["other"]["license"]).read() == "Apache test\n"
 EOF
 }

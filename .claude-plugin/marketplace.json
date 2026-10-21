@@ -6,34 +6,16 @@
   },
   "plugins": [
     {
-      "name": "abilities-planning",
-      "source": "./plugins/abilities-planning",
-      "description": "Grill a design, plan large work, research, and prototype."
-    },
-    {
-      "name": "abilities-writing",
-      "source": "./plugins/abilities-writing",
-      "description": "Remove AI patterns, restate replies plainly, and write for agents."
-    },
-    {
-      "name": "abilities-debugging",
-      "source": "./plugins/abilities-debugging",
-      "description": "Find the cause of hard bugs with a feedback loop."
-    },
-    {
-      "name": "abilities-principles",
-      "source": "./plugins/abilities-principles",
-      "description": "Engineering principles that Claude applies by itself."
-    },
-    {
-      "name": "abilities-sessions",
-      "source": "./plugins/abilities-sessions",
-      "description": "Hand off a session and run a retrospective."
-    },
-    {
       "name": "abilities",
       "source": "./plugins/abilities",
-      "description": "Installs every abilities plugin."
+      "description": "Planning, writing, debugging, engineering principles, and session skills."
     }
-  ]
+  ],
+  "renames": {
+    "abilities-planning": "abilities",
+    "abilities-writing": "abilities",
+    "abilities-debugging": "abilities",
+    "abilities-principles": "abilities",
+    "abilities-sessions": "abilities"
+  }
 }
