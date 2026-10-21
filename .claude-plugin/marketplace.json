@@ -8,7 +8,7 @@
     {
       "name": "abilities",
       "source": "./plugins/abilities",
-      "description": "Planning, writing, debugging, engineering principles, and session skills."
+      "description": "Planning, building, writing, debugging, engineering principles, and session skills."
     }
   ],
   "renames": {

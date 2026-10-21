@@ -32,6 +32,16 @@ A skill's command is `/abilities:<skill>`, for example `/abilities:unslop`. The 
 | `/abilities:to-tickets` | Splits a spec into small tickets and waits for your approval of the list. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/to-tickets) |
 | `/abilities:wayfinder` | Plans work that is too large for one session as a map of decision tickets. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/wayfinder) |
 
+### Building
+
+| Skill | Description | Claude starts it | Source |
+| --- | --- | :-: | --- |
+| `/abilities:code-review` | Reviews the changes since a commit or branch against the repo standards and the spec. | X | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/code-review) |
+| `/abilities:codebase-design` | Gives the terms and rules to design deep modules with small interfaces. | X | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/codebase-design) |
+| `/abilities:implement-spec` | Builds the tickets from `to-tickets` with parallel subagents on one integration branch. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/implement-spec) |
+| `/abilities:improve-codebase-architecture` | Finds modules to make deeper, shows them in an HTML report, and grills you on one. |  | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture) |
+| `/abilities:tdd` | Builds a feature or a fix test first, one test at a time. | X | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/tdd) |
+
 ### Writing
 
 | Skill | Description | Claude starts it | Source |
