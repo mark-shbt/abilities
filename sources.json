@@ -24,6 +24,46 @@
     "license": "licenses/mattpocock-skills.txt"
   },
   {
+    "name": "handoff",
+    "repo": "mattpocock/skills",
+    "path": "skills/productivity/handoff",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "principle-attack-the-premise",
+    "repo": "cursor/plugins",
+    "path": "pstack/skills/principle-attack-the-premise",
+    "ref": "main",
+    "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
+    "license": "licenses/cursor-plugins.txt"
+  },
+  {
+    "name": "principle-laziness-protocol",
+    "repo": "cursor/plugins",
+    "path": "pstack/skills/principle-laziness-protocol",
+    "ref": "main",
+    "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
+    "license": "licenses/cursor-plugins.txt"
+  },
+  {
+    "name": "principle-subtract-before-you-add",
+    "repo": "cursor/plugins",
+    "path": "pstack/skills/principle-subtract-before-you-add",
+    "ref": "main",
+    "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
+    "license": "licenses/cursor-plugins.txt"
+  },
+  {
+    "name": "principle-test-behavior-not-implementation",
+    "repo": "cursor/plugins",
+    "path": "pstack/skills/principle-test-behavior-not-implementation",
+    "ref": "main",
+    "commit": "190d28736eff128ec94f502a22c7fe0c4b56cd37",
+    "license": "licenses/cursor-plugins.txt"
+  },
+  {
     "name": "prototype",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/prototype",
@@ -35,6 +75,14 @@
     "name": "research",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/research",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "retro",
+    "repo": "mattpocock/skills",
+    "path": "skills/engineering/retro",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
     "license": "licenses/mattpocock-skills.txt"
@@ -56,9 +104,25 @@
     "license": "licenses/cursor-plugins.txt"
   },
   {
+    "name": "wait-what",
+    "repo": "mattpocock/skills",
+    "path": "skills/productivity/wait-what",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
     "name": "wayfinder",
     "repo": "mattpocock/skills",
     "path": "skills/engineering/wayfinder",
+    "ref": "main",
+    "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+    "license": "licenses/mattpocock-skills.txt"
+  },
+  {
+    "name": "writing-for-agents",
+    "repo": "mattpocock/skills",
+    "path": "skills/productivity/writing-for-agents",
     "ref": "main",
     "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
     "license": "licenses/mattpocock-skills.txt"
