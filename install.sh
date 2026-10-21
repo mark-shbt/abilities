@@ -44,8 +44,8 @@ for group in groups:
 groups = [g for g in groups if g["hooks"]]
 
 if mode == "auto":
+    # No matcher, so the hook runs on startup, resume, clear, and compact.
     groups.append({
-        "matcher": "startup",
         "hooks": [{"type": "command", "command": command, "timeout": 10}],
     })
 
@@ -64,7 +64,7 @@ with open(tmp, "w") as f:
 os.replace(tmp, path)
 
 if mode == "auto":
-    print("Auto-update is on. Each new Claude Code session pulls this repo.")
+    print("Auto-update is on. Each Claude Code session start pulls this repo.")
 else:
     print("Auto-update is off. Run bin/sync.sh to update.")
 EOF
